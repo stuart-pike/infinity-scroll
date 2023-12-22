@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
+
+:root {
+  --background: whitesmoke;
+}
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Fjalla One, Helvetica, sans-serif;
+  background-color: var(--background);
+}
+
+h1 {
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-size: 2rem;
+  letter-spacing: 2.3px;
+}
+
+/*Loader*/
+
+.loader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.loader img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Image Container */
+.image-container {
+  margin: 10px 30%;
+}
+
+.image-container img {
+  width: 100%;
+  margin-top: 5px;
+}
+
+img {
+  width: 100%; /* Make the image inherit the width of its parent */
+  height: auto; /* Ensure the aspect ratio is maintained */
+  display: block; /* Prevent any extra space below the image */
+  margin-top: 2rem;
+  scale: 0.8;
+  opacity: 0;
+  /* Forwards required in animation if scale and opacity are defined in the tag */
+  animation: linear fade-in forwards;
+  animation-timeline: view();
+  /* just as image enters screen from bottom of window */
+  animation-range-start: cover;
+  /* hight of image in pixels image at full size and opacity */
+  /* animation-range-end: 360px; */
+  /* same as above but do not need height of image(s) */
+  animation-range: entry;
+}
+
+@keyframes fade-in {
+  /* from {
+    scale: 0.8;
+    opacity: 0;
+  } */
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+/* Media Query: lg smartphone */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  .image-container {
+    margin: 10px;
+  }
+}
