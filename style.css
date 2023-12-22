@@ -51,7 +51,7 @@ h1 {
   margin-top: 5px;
 }
 
-img {
+#image-container img {
   width: 100%; /* Make the image inherit the width of its parent */
   height: auto; /* Ensure the aspect ratio is maintained */
   display: block; /* Prevent any extra space below the image */
